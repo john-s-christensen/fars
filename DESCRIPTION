@@ -4,6 +4,8 @@ Version: 0.0.0.9000
 Authors@R: person("John", "Christensen", email = "johnschristensen9@gmail.com", role = c("aut", "cre"))
 Description: Summarize car accident fatality counts by year. 
     Visualize car accident fatalities within a state for a year.
+URL: https://github.com/john-s-christensen/fars
+BugReports: https://github.com/john-s-christensen/fars/issues
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
