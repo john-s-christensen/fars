@@ -1,0 +1,37 @@
+---
+title: "FARS - Summarizing & Visualizing the Fatality Accident Reporting System"
+author: "John Christensen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+There are two things you can do with the fars package:
+
+1. You can summarize car accident fatality counts by year using the `fars_summarize_years()` function
+2. You can visualize car accident fatalities within a state & year using the `fars_map_state()` function
+
+## Summarize accident fatalities by year using `fars_summarize_years()`
+
+To summarize car accident fatalities by year, using the `fars_summarize_years()` function, supply a year or vector of years between 2013-2015: 
+
+```{r}
+library(fars)
+fars_summarize_years(c(2013, 2014, 2015))
+```
+
+
+## Visualize accident fatalities within a state & year using `fars_map_state()`
+
+To visualize car accident fatalities within a state & year using the `fars_map_state()` function, supply a single state code and single year between 2013-2015:
+
+```{r}
+fars_map_state(48, 2015)
+```
+
+FARS state codes can be downloaded [here](https://www.gsa.gov/reference/geographic-locator-codes/glcs-for-the-us-and-us-territories).
