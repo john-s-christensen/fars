@@ -199,6 +199,7 @@ devtools::use_travis()
   # Run devtools::use_travis() to set up a basic .travis.yml config file.
   # Navigate to your Travis account and enable Travis for the repo you want to test.
   # Commit and push to GitHub.
+      # NEED TO FILL IN HERE THE COOL THINGS I LEARNED & WHERE I LEARNED THEM!
   # Wait a few minutes to see the results in your email.
 
 
@@ -206,3 +207,14 @@ devtools::use_travis()
 # http://r-pkgs.had.co.nz/git.html#git
 file.exists("~/.ssh/id_rsa.pub")
 
+# tO ADD tRAVIS BUILD BADGE TO README.MD:
+# https://docs.travis-ci.com/user/status-images/
+
+# CATCHING UP ON ReadMe.md docs, which i had forgotten about:
+  # https://bookdown.org/rdpeng/RProgDA/documentation.html#vignettes-and-readme-files
+
+# I first need to create a ReadMe file, then render it as md? & then add my travis staus icon to it.
+
+?devtools::use_readme_rmd
+devtools::use_readme_rmd()
+# This is super cool b/c the above function will render the .mdfile from the .Rmd file after you "knit"!

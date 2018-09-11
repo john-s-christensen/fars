@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# fars (Fatality Accident Reorting System)
+
+[![Build Status](https://travis-ci.org/john-s-christensen/fars.svg?branch=master)](https://travis-ci.org/john-s-christensen/fars)
+
+There are two things you can do with the fars package:
+
+1. You can summarize car accident fatality counts by year & month using the `fars_summarize_years()` function
+2. You can visualize car accident fatalities within a state & year using the `fars_map_state()` function
+
+## Installation
+
+You can install fars from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("john-s-christensen/fars")
+```
+
+## Example
+
+Here is a basic example:
+```{r example}
+library(fars)
+fars_summarize_years(c(2013, 2014, 2015))
+
+fars_map_state(48, 2015)
+```

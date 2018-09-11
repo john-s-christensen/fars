@@ -13,10 +13,10 @@ vignette: >
 
 There are two things you can do with the fars package:
 
-1. You can summarize car accident fatality counts by year using the `fars_summarize_years()` function
+1. You can summarize car accident fatality counts by year & month using the `fars_summarize_years()` function
 2. You can visualize car accident fatalities within a state & year using the `fars_map_state()` function
 
-## Summarize accident fatalities by year using `fars_summarize_years()`
+## Summarize accident fatalities by year  & month using `fars_summarize_years()`
 
 To summarize car accident fatalities by year, using the `fars_summarize_years()` function, supply a year or vector of years between 2013-2015: 
 
