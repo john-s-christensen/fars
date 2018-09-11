@@ -213,6 +213,8 @@ file.exists("~/.ssh/id_rsa.pub")
 
 # tO ADD tRAVIS BUILD BADGE TO README.MD:
 # https://docs.travis-ci.com/user/status-images/
+    # Basically, click the status icon and get the link for the image in markdown format
+    # thenjust paste it into your .Rmd doc & knit!
 
 # CATCHING UP ON ReadMe.md docs, which i had forgotten about:
   # https://bookdown.org/rdpeng/RProgDA/documentation.html#vignettes-and-readme-files
