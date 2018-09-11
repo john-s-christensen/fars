@@ -200,6 +200,10 @@ devtools::use_travis()
   # Navigate to your Travis account and enable Travis for the repo you want to test.
   # Commit and push to GitHub.
       # NEED TO FILL IN HERE THE COOL THINGS I LEARNED & WHERE I LEARNED THEM!
+        # Followed this: http://r-pkgs.had.co.nz/git.html#git
+        # Under "Git" in R Studio, hit the Commit button.
+        # This opens a window where you can select all records & stage them, then commit them.
+        # Then hit Push to send changes up to GitHub.
   # Wait a few minutes to see the results in your email.
 
 
