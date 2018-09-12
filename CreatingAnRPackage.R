@@ -224,3 +224,22 @@ file.exists("~/.ssh/id_rsa.pub")
 ?devtools::use_readme_rmd
 devtools::use_readme_rmd()
 # This is super cool b/c the above function will render the .mdfile from the .Rmd file after you "knit"!
+
+
+# Here are the git commands i ran in the Shell (Tool >> Shell):
+# Also, in Tools >> Project options >> Git/SVN is where you can see what the origin is.
+git remote add origin git@github.com:john-s-christensen/CourseraFarsPackage
+git push -u origin master
+# Above command didnt work b/c that had other stuff in it. So i created a new repo on GitHub & switched the origin:
+git remote add origin https://github.com/john-s-christensen/fars.git
+# Above didn't work, but below did:
+git remote set-url origin https://github.com/john-s-christensen/fars.git
+git push -u origin master
+
+
+
+
+
+
+
+
