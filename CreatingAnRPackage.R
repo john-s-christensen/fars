@@ -241,5 +241,22 @@ git push -u origin master
 
 
 
+#############################
+# NSE
+#############################
+
+# I realized today that what the assignment probably wanted us to do was solve the NSE problem,
+# rather than just get around it by initializing variables in scope as NULL (like I did).
+# So, following Roger Peng's advice (https://bookdown.org/rdpeng/RProgDA/non-standard-evaluation.html)
+# I used the standard evaluation of tidyverse verbs.  And it worked!
+# However, in doing so I learned that thes SE verbs are basically superfluous.
+# Not exactly sure how to do it the other way and still don't perfectly understand NSE & this note it created!
+# This has been incredibly helpful so far:
+https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html
+
+
+
+
+
 
 
