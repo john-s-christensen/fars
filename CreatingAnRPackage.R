@@ -257,7 +257,18 @@ https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html
 # Then I'm going to do it right using the instructions in the vingette above & commit those!
 
 
+#############################
+# GitHub
+#############################
 
+# I used 'git checkout master' and then 'git merge nse-functions' to check out my local master
+# branch and merge the changes from nse-functions. It didn't work. I got a message about how
+# there were unmerged changes (I had altered this document in master after checking out the nse-functions branch I think)
+# so I used 'git merge --abort' and copied and pasted this document from master into the nse version and committed and pushed that.
+# Then the above first two commands worked.
+# Then I used 'git branch -d nse-functions'. This deleted my local nse-functions branch.
+# Then I wanted to delete the remote version too, so that it matches.
+# I used: 'git push origin :nse-functions' and that deleted the remote branch!
 
 
 
