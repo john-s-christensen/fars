@@ -196,15 +196,15 @@ devtools::check()
 # http://r-pkgs.had.co.nz/check.html#travis
 devtools::use_travis()
 # To use Travis:
-  # Run devtools::use_travis() to set up a basic .travis.yml config file.
-  # Navigate to your Travis account and enable Travis for the repo you want to test.
-  # Commit and push to GitHub.
-      # NEED TO FILL IN HERE THE COOL THINGS I LEARNED & WHERE I LEARNED THEM!
-        # Followed this: http://r-pkgs.had.co.nz/git.html#git
-        # Under "Git" in R Studio, hit the Commit button.
-        # This opens a window where you can select all records & stage them, then commit them.
-        # Then hit Push to send changes up to GitHub.
-  # Wait a few minutes to see the results in your email.
+# Run devtools::use_travis() to set up a basic .travis.yml config file.
+# Navigate to your Travis account and enable Travis for the repo you want to test.
+# Commit and push to GitHub.
+# NEED TO FILL IN HERE THE COOL THINGS I LEARNED & WHERE I LEARNED THEM!
+# Followed this: http://r-pkgs.had.co.nz/git.html#git
+# Under "Git" in R Studio, hit the Commit button.
+# This opens a window where you can select all records & stage them, then commit them.
+# Then hit Push to send changes up to GitHub.
+# Wait a few minutes to see the results in your email.
 
 
 # Now reading through:
@@ -213,11 +213,11 @@ file.exists("~/.ssh/id_rsa.pub")
 
 # tO ADD tRAVIS BUILD BADGE TO README.MD:
 # https://docs.travis-ci.com/user/status-images/
-    # Basically, click the status icon and get the link for the image in markdown format
-    # thenjust paste it into your .Rmd doc & knit!
+# Basically, click the status icon and get the link for the image in markdown format
+# thenjust paste it into your .Rmd doc & knit!
 
 # CATCHING UP ON ReadMe.md docs, which i had forgotten about:
-  # https://bookdown.org/rdpeng/RProgDA/documentation.html#vignettes-and-readme-files
+# https://bookdown.org/rdpeng/RProgDA/documentation.html#vignettes-and-readme-files
 
 # I first need to create a ReadMe file, then render it as md? & then add my travis staus icon to it.
 
@@ -255,7 +255,6 @@ git push -u origin master
 https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html
 # I'm going to commit this branch & push so that i'll have this version saved in the main one.
 # Then I'm going to do it right using the instructions in the vingette above & commit those!
-
 
 
 
