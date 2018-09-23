@@ -86,6 +86,7 @@ make_filename <- function(year) {
 #' message, will be returned; "invalid year: 2017" for example.
 #'
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
 #'
 #' @examples
 #' fars_read_years(c(2013, 2014, 2015))
@@ -99,7 +100,7 @@ fars_read_years <- function(years) {
     tryCatch({
       dat <- fars_read(file)
       dplyr::mutate(dat, year = year) %>%
-        dplyr::select_(.dots = c('MONTH', 'year'))
+        dplyr::select(.data$MONTH, year)
     }, error = function(e) {
       warning("invalid year: ", year)
       return(NULL)
@@ -127,6 +128,7 @@ fars_read_years <- function(years) {
 #' @return This function returns a tibble.
 #'
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
 #'
 #' @examples
 #' fars_summarize_years(c(2013, 2014, 2015))
@@ -138,9 +140,9 @@ fars_summarize_years <- function(years) {
 
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
-    dplyr::group_by_(~ year, ~ MONTH) %>%
+    dplyr::group_by(.data$year, .data$MONTH) %>%
     dplyr::summarize_(n = ~ n()) %>%
-    tidyr::spread_(key_col = 'year', value_col = 'n')
+    tidyr::spread(.data$year, .data$n)
 }
 
 #' @title
@@ -175,6 +177,8 @@ fars_summarize_years <- function(years) {
 #' all regions out of bounds". \code{fars_map_state(2, 2013)} for example will
 #' return this message.
 #'
+#' @importFrom rlang .data
+#'
 #' @examples
 #' fars_map_state(48, 2015)
 #'
@@ -185,11 +189,11 @@ fars_map_state <- function(state.num, year) {
   state.num <- as.integer(state.num)
 
   # To avoid "no visible binding for global variable" note in R Check CMD:
-  STATE <- NULL
+  #STATE <- NULL
 
   if(!(state.num %in% unique(data$STATE)))
     stop("invalid STATE number: ", state.num)
-  data.sub <- dplyr::filter(data, STATE == state.num)
+  data.sub <- dplyr::filter(data, .data$STATE == state.num)
   if(nrow(data.sub) == 0L) {
     message("no accidents to plot")
     return(invisible(NULL))

@@ -15,7 +15,8 @@ Imports: dplyr,
     maps,
     readr,
     tidyr,
-    magrittr
+    magrittr,
+    rlang
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown,
