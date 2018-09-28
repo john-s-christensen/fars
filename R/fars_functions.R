@@ -25,15 +25,9 @@
 #'
 #' @export
 fars_read <- function(filename) {
-  #if(!file.exists(paste0("extdata/",filename)))
-   # stop("file '", filename, "' does not exist")
   data <- suppressMessages({
-    #readr::read_csv(paste0("data/",filename), progress = FALSE) # I want to try using system.file
-    #in read_csv. How would you call the internal data without using read_csv??
-    #readr::read_csv(filename, progress = FALSE)
     readr::read_csv(system.file("extdata", filename, package = "fars"), progress = FALSE)
   })
-  #data <- filename
   dplyr::tbl_df(data)
 }
 
@@ -93,8 +87,6 @@ make_filename <- function(year) {
 #'
 #' @export
 fars_read_years <- function(years) {
-  # To avoid "no visible binding for global variable" note in R Check CMD:
-  # MONTH <- NULL
   lapply(years, function(year) {
     file <- make_filename(year)
     tryCatch({
@@ -135,13 +127,10 @@ fars_read_years <- function(years) {
 #'
 #' @export
 fars_summarize_years <- function(years) {
-  # To avoid "no visible binding for global variable" note in R Check CMD:
-  #year <- MONTH <- n <- NULL
-
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(.data$year, .data$MONTH) %>%
-    dplyr::summarize_(n = ~ n()) %>%
+    dplyr::summarize_(n = ~n()) %>% # Still need to figure this out!
     tidyr::spread(.data$year, .data$n)
 }
 
@@ -187,10 +176,6 @@ fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
-
-  # To avoid "no visible binding for global variable" note in R Check CMD:
-  #STATE <- NULL
-
   if(!(state.num %in% unique(data$STATE)))
     stop("invalid STATE number: ", state.num)
   data.sub <- dplyr::filter(data, .data$STATE == state.num)
